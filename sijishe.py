@@ -24,7 +24,9 @@ checkIn_status = 2
 send_content = ''
 
 def start(postdata):
+    # 签到积分信息页面
     url = 'https://xsijishe.net/k_misign-sign.html'
+
     # 账号数据按格式分割
     global send_content
     try:
@@ -52,10 +54,15 @@ def start(postdata):
 
         # 获取签到信息
         get_url = rhtml.xpath('//*[@id="JD_sign"]/@href')
+        # 签到排名
         qiandao_num = rhtml.xpath('//*[@id="qiandaobtnnum"]/@value')[0]
+        # 连续签到天数
         lxdays = rhtml.xpath('//*[@id="lxdays"]/@value')[0]
+        # 总签到天数
         lxtdays = rhtml.xpath('//*[@id="lxtdays"]/@value')[0]
+        # 签到等级
         lxlevel = rhtml.xpath('//*[@id="lxlevel"]/@value')[0]
+        # 签到获取车票奖励数
         lxreward = rhtml.xpath('//*[@id="lxreward"]/@value')[0]
         # 格式化签到信息内容
         lxqiandao_content = f'签到排名：{qiandao_num}\n签到等级：Lv.{lxlevel}\n连续签到：{lxdays} 天\n签到总数：{lxtdays} 天\n签到奖励：{lxreward}\n'
@@ -98,17 +105,21 @@ def printUserInfo(uinfo, qiandao_content):
         #print(res.text)
         #print(res.status_code)
         rhtml = etree.HTML(res.text)
+        # 账户名称
         xm = rhtml.xpath('//*[@id="ct"]/div/div[2]/div/div[1]/div[1]/h2[1]/text()')[0].replace("\r\n", "")
-        #print(xm)
+        # 当前车票数
         cp = rhtml.xpath('//*[@id="psts"]/ul/li[4]/text()')
+        # 当前积分
         jf = rhtml.xpath('//*[@id="psts"]/ul/li[2]/text()')
+        # 当前威望
         ww = rhtml.xpath('//*[@id="psts"]/ul/li[3]/text()')
+        # 当前贡献
         gx = rhtml.xpath('//*[@id="psts"]/ul/li[5]/text()')
     except Exception as e:
         print('访问用户信息失败')
         print(e)
     #exit(0)
-    # print(rhtml.xpath('//*[@id="ct"]/div/div[2]/div/div[1]/div[1]/h2[1]/text()'))
+
     print(f'=============账户【{xm}】=============')
     print(f'签到状态: {checkIn_content[checkIn_status]} \n{qiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}')
     # exit(0)
