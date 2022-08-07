@@ -7,6 +7,11 @@ new Env('司机社签到');
 可以使用浏览器抓包, 打开签到页面 找到两个Key SgL6_2132_saltkey=xxxxxx; SgL6_2132_auth=xxxxxx;
 多个账号使用@间隔
 青龙Python依赖, requests, lxml
+[task_local]
+# 司机社签到
+0 8 * * * https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/sijishe.py, tag=司机社签到, enabled=true
+[rewrite_local]
+https://xsijishe.net url script-request-header https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/sijishe.py
 """
 
 import requests
