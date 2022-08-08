@@ -8,7 +8,7 @@ new Env('司机社签到');
 多个账号使用@间隔
 青龙Python依赖, requests, lxml
 [task_local]
-# 司机社签到
+#司机社签到
 0 8 * * * https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/sijishe.py, tag=司机社签到, enabled=true
 [rewrite_local]
 https://xsijishe.net url script-request-header https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/sijishe.py
@@ -28,9 +28,10 @@ checkIn_content = '今日已签到', '签到成功', 'Cookie失效'
 checkIn_status = 2
 send_content = ''
 
+# 签到积分信息页面
+sign_url = 'https://xsijishe.net/k_misign-sign.html'
+
 def start(postdata):
-    # 签到积分信息页面
-    url = 'https://xsijishe.net/k_misign-sign.html'
 
     # 账号数据按格式分割
     global send_content
@@ -53,31 +54,20 @@ def start(postdata):
         }
         s = requests.session()
         #s.proxies = {'https': '101.200.127.149:3129', }
-        res = s.request("GET", url, headers=headers, timeout=30, verify=False)
+        res = s.request("GET", sign_url, headers=headers, timeout=30, verify=False)
         # print(res.text)
         rhtml = etree.HTML(res.text)
 
-        # 获取签到信息
+        # 获取签到地址
         get_url = rhtml.xpath('//*[@id="JD_sign"]/@href')
-        # 签到排名
-        qiandao_num = rhtml.xpath('//*[@id="qiandaobtnnum"]/@value')[0]
-        # 连续签到天数
-        lxdays = rhtml.xpath('//*[@id="lxdays"]/@value')[0]
-        # 总签到天数
-        lxtdays = rhtml.xpath('//*[@id="lxtdays"]/@value')[0]
-        # 签到等级
-        lxlevel = rhtml.xpath('//*[@id="lxlevel"]/@value')[0]
-        # 签到获取车票奖励数
-        lxreward = rhtml.xpath('//*[@id="lxreward"]/@value')[0]
-        # 格式化签到信息内容
-        lxqiandao_content = f'签到排名：{qiandao_num}\n签到等级：Lv.{lxlevel}\n连续签到：{lxdays} 天\n签到总数：{lxtdays} 天\n签到奖励：{lxreward}\n'
+
         try:
             qiandao_url = 'https://xsijishe.net/' + get_url[0]
             qiandao_url.index('operation=qiandao')
         except:
             #print('今日已签到')
             checkIn_status = 0
-            printUserInfo(i, lxqiandao_content)
+            printUserInfo(i)
             continue
 
         try:
@@ -86,12 +76,12 @@ def start(postdata):
             checkIn_status = 1
         except:
             print('Cookie失效')
-        printUserInfo(i, lxqiandao_content)
+        printUserInfo(i)
 
     send('司机社签到', send_content)
 
 # 获取用户积分信息
-def printUserInfo(uinfo, qiandao_content):
+def printUserInfo(uinfo):
 
     headers = {
         'cookie': uinfo,
@@ -104,6 +94,26 @@ def printUserInfo(uinfo, qiandao_content):
     s.keep_alive = False
     # 使用代理服务
     #s.proxies = {"https": "101.200.127.149:3129"}
+    try:
+        res = s.request("GET", sign_url, headers=headers, timeout=30, verify=False)
+        # print(res.text)
+        rhtml = etree.HTML(res.text)
+    except Exception as e:
+        print('访问用户信息失败，Cookie失效')
+        print(e)
+    # 签到排名
+    qiandao_num = rhtml.xpath('//*[@id="qiandaobtnnum"]/@value')[0]
+    # 连续签到天数
+    lxdays = rhtml.xpath('//*[@id="lxdays"]/@value')[0]
+    # 总签到天数
+    lxtdays = rhtml.xpath('//*[@id="lxtdays"]/@value')[0]
+    # 签到等级
+    lxlevel = rhtml.xpath('//*[@id="lxlevel"]/@value')[0]
+    # 签到获取车票奖励数
+    lxreward = rhtml.xpath('//*[@id="lxreward"]/@value')[0]
+    # 格式化签到信息内容
+    lxqiandao_content = f'签到排名：{qiandao_num}\n签到等级：Lv.{lxlevel}\n连续签到：{lxdays} 天\n签到总数：{lxtdays} 天\n签到奖励：{lxreward}\n'
+
     try:
         res = s.request("GET", 'https://xsijishe.net/home.php?mod=space', headers=headers, timeout=30, verify=False)
         time.sleep(1)
@@ -126,10 +136,10 @@ def printUserInfo(uinfo, qiandao_content):
     #exit(0)
 
     print(f'=============账户【{xm}】=============')
-    print(f'签到状态: {checkIn_content[checkIn_status]} \n{qiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}')
+    print(f'签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}')
     # exit(0)
     global send_content
-    send_content += f'=============账户【{xm}】=============\n签到状态: {checkIn_content[checkIn_status]} \n{qiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n'
+    send_content += f'=============账户【{xm}】=============\n签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n'
 
 
 if __name__ == '__main__':
