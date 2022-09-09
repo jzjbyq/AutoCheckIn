@@ -231,13 +231,17 @@ def printUserInfo():
     global send_content
     send_content += f'{xm}\n签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n'
 
-
-if __name__ == '__main__':
+# 阿里云函数入口
+def handler(event, context):
     try:
         _postdata = os.environ['XSIJISHE']
     except Exception:
         print('未设置环境变量 XSIJISHE')
         exit(0)
+    if get_new_url():
+        start(_postdata)
+    exit(0)
 
-if get_new_url():
-    start(_postdata)
+
+if __name__ == '__main__':
+    handler('', '')
