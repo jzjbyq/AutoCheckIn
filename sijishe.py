@@ -22,6 +22,7 @@ import urllib3
 import re
 import hashlib
 import requests
+import random
 
 urllib3.disable_warnings()
 
@@ -41,6 +42,16 @@ def string_to_md5(key):
     md5 = hashlib.md5()
     md5.update(key.encode("utf-8"))
     return md5.hexdigest()
+
+def getrandom(code_len):
+    all_char = 'qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJIKOLP'
+    index = len(all_char) - 1
+    code = ''
+    for _ in range(code_len):
+        num = random.randint(0, index)
+        code += all_char[num]
+    return code
+
 
 # 从发布页获取网站地址
 def get_new_url():
@@ -83,7 +94,8 @@ def login(username, password):
         'questionid': '0',
         'answer': '',
     }
-    login_url = main_url + '/member.php?mod=logging&action=login&loginsubmit=yes&frommessage&loginhash=LtbbJ&inajax=1'
+
+    login_url = main_url + '/member.php?mod=logging&action=login&loginsubmit=yes&frommessage&loginhash=Lt' + getrandom(3) + '&inajax=1'
     try:
         response = requests.post(login_url, cookies=cookies, headers=headers, data=data)
         cookiejar_to_json(response.cookies)
@@ -92,7 +104,7 @@ def login(username, password):
         # print(cookies)
         return 1
     except:
-        print(f'账号{username}登录失败，请检查账号密码')
+        print(f'账号{username}登录失败，请检查账号密码, 可能是验证码问题，等待更新...')
         return 0
 
 def start(postdata):
@@ -124,7 +136,7 @@ def start(postdata):
         get_cookie_formhash()
         if not login(name, pwd):
             send_content += f'账号{name}登录失败,请检查账号密码\n\n'
-            break
+            continue
         headers = {
             'referer': main_url + '/',
             'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39'
@@ -133,18 +145,24 @@ def start(postdata):
         #s.proxies = {'https': '101.200.127.149:3129', }
 
         # 获取签到地址
-        qiandao_url = main_url + '/plugin.php?id=k_misign:sign&operation=qiandao&formhash='+formhash+'&format=empty&inajax=1&ajaxtarget=JD_sign'
-        # print(qiandao_url)
+        try:
+            res = s.get(main_url + '/k_misign-sign.html', cookies=cookies, headers=headers, timeout=30)
+            rhtml = etree.HTML(res.text)
+            # cookiejar_to_json(res.cookies)
+            # print(res.text)
+            qiandao_url = rhtml.xpath('//*[@id="JD_sign"]/@href')[0]
+            # print(qiandao_url)
+        except:
+            # print('今日已签到')
+            checkIn_status = 0
 
         try:
-            res = s.request('GET', qiandao_url, cookies=cookies, headers=headers, timeout=30)
-            # 获取登录后的cookie
-            cookiejar_to_json(res.cookies)
+            s.get(main_url+ '/' + qiandao_url, cookies=cookies, headers=headers, timeout=30, verify=False)
             # print('签到成功')
             checkIn_status = 1
-        except:
-            print('Cookie失效')
-            checkIn_status = 2
+        except Exception as e:
+            # print(e)
+            checkIn_status = 0
         printUserInfo()
 
     send('司机社签到', send_content)
