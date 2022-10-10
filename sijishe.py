@@ -38,10 +38,13 @@ sign_url = '/k_misign-sign.html'
 formhash = ''
 main_url = ''
 headers = {}
+
+
 def string_to_md5(key):
     md5 = hashlib.md5()
     md5.update(key.encode("utf-8"))
     return md5.hexdigest()
+
 
 def getrandom(code_len):
     all_char = 'qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJIKOLP'
@@ -57,16 +60,22 @@ def getrandom(code_len):
 def get_new_url():
     global main_url
     url = 'https://sijishe.me/'
-    try:
-        res = requests.get(url)
-        rhtml = etree.HTML(res.text)
-        urls = rhtml.xpath('//*[@id="main"]/div/div[2]/div/div/a[1]/@href')[0]
-        main_url = str(urls)
-        # print(main_url)
-        return 1
-    except:
-        print('发布页地址获取失败，请检查网络连接')
+    ot_num = 1
+    ot_max_num = 10
+    while ot_num < ot_max_num:
+        try:
+            res = requests.get(url)
+            rhtml = etree.HTML(res.text)
+            urls = rhtml.xpath('//*[@id="main"]/div/div[2]/div/div/a[1]/@href')[0]
+            main_url = str(urls)
+            # print(main_url)
+            return 1
+        except:
+            print(f'发布页地址获取失败，正在进行第{ot_num}/{ot_max_num}次重试')
+        time.sleep(10)
+        ot_num += 1
     exit(0)
+
 
 # 初始化cookie和页面formhash信息
 def get_cookie_formhash():
@@ -79,11 +88,13 @@ def get_cookie_formhash():
     formhash = re.findall(r'<input type="hidden" name="formhash" value="(.*)" />', response.text)[0]
     # print(formhash[0])
 
+
 # cookiejar转为json
 def cookiejar_to_json(Rcookie):
     global cookies
     for item in Rcookie:
         cookies[item.name] = item.value
+
 
 def login(username, password):
     data = {
@@ -95,7 +106,8 @@ def login(username, password):
         'answer': '',
     }
 
-    login_url = main_url + '/member.php?mod=logging&action=login&loginsubmit=yes&frommessage&loginhash=Lt' + getrandom(3) + '&inajax=1'
+    login_url = main_url + '/member.php?mod=logging&action=login&loginsubmit=yes&frommessage&loginhash=Lt' + getrandom(
+        3) + '&inajax=1'
     try:
         response = requests.post(login_url, cookies=cookies, headers=headers, data=data)
         cookiejar_to_json(response.cookies)
@@ -107,12 +119,12 @@ def login(username, password):
         print(f'账号{username}登录失败，请检查账号密码, 可能是验证码问题，等待更新...')
         return 0
 
-def start(postdata):
 
+def start(postdata):
     # 账号数据按格式分割
     global send_content
     try:
-        payload = postdata.split('@')
+        payload = re.split('@|\n', postdata)
         print('发现', len(payload), '个账号信息\n')
         send_content += f'发现 {len(payload)} 个账号信息\n'
         # info = '发现 ' + str(len(payload)) + ' 个账号信息\n\n'
@@ -142,7 +154,7 @@ def start(postdata):
             'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39'
         }
         s = requests.session()
-        #s.proxies = {'https': '101.200.127.149:3129', }
+        # s.proxies = {'https': '101.200.127.149:3129', }
 
         # 获取签到地址
         try:
@@ -157,7 +169,7 @@ def start(postdata):
             checkIn_status = 0
 
         try:
-            s.get(main_url+ '/' + qiandao_url, cookies=cookies, headers=headers, timeout=30, verify=False)
+            s.get(main_url + '/' + qiandao_url, cookies=cookies, headers=headers, timeout=30, verify=False)
             # print('签到成功')
             checkIn_status = 1
         except Exception as e:
@@ -167,9 +179,9 @@ def start(postdata):
 
     send('司机社签到', send_content)
 
+
 # 获取用户积分信息
 def printUserInfo():
-
     headers = {
         'referer': main_url + '/',
         'upgrade-insecure-requests': '1',
@@ -179,7 +191,7 @@ def printUserInfo():
     # 关闭多余连接
     s.keep_alive = False
     # 使用代理服务
-    #s.proxies = {"https": "101.200.127.149:3129"}
+    # s.proxies = {"https": "101.200.127.149:3129"}
 
     try:
         res = s.request("GET", main_url + sign_url, cookies=cookies, headers=headers, timeout=30, verify=False)
@@ -202,10 +214,11 @@ def printUserInfo():
     lxqiandao_content = f'签到排名：{qiandao_num}\n签到等级：Lv.{lxlevel}\n连续签到：{lxdays} 天\n签到总数：{lxtdays} 天\n签到奖励：{lxreward}\n'
 
     try:
-        res = s.request("GET", main_url + '/home.php?mod=space', cookies=cookies, headers=headers, timeout=30, verify=False)
+        res = s.request("GET", main_url + '/home.php?mod=space', cookies=cookies, headers=headers, timeout=30,
+                        verify=False)
         time.sleep(1)
-        #print(res.text)
-        #print(res.status_code)
+        # print(res.text)
+        # print(res.status_code)
         rhtml = etree.HTML(res.text)
         # 账户名称
         xm = rhtml.xpath('//*[@id="ct"]/div/div[2]/div/div[1]/div[1]/h2[1]/text()')[0].replace("\r\n", "")
@@ -220,16 +233,18 @@ def printUserInfo():
     except Exception as e:
         print('访问用户信息失败，可能存在网络波动')
         print(e)
-    #exit(0)
+    # exit(0)
     # 格式化输出内容并居中
-    xm = "账户【" + xm +"】"
+    xm = "账户【" + xm + "】"
     xm = xm.center(24, '=')
 
     print(xm)
-    print(f'签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n')
+    print(
+        f'签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n')
     # exit(0)
     global send_content
     send_content += f'{xm}\n签到状态: {checkIn_content[checkIn_status]} \n{lxqiandao_content} \n当前积分: {jf[0]}\n当前威望: {ww[0]}\n当前车票: {cp[0]}\n当前贡献: {gx[0]}\n\n'
+
 
 # 阿里云函数入口
 def handler(event, context):
