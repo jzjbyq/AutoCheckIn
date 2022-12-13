@@ -4,7 +4,7 @@
 cron: 0 8 * * *
 new Env('老王资源部落签到');
 环境变量名称：LAOWANG_CK
-cookie抓包 wordpress_logged_in_xxxxxxxxxx 即可
+cookie抓包 wordpress_sec_xxxxxxxxxx 即可
 多个账号使用@或者换行间隔
 青龙Python依赖, requests, lxml
 [task_local]
@@ -46,8 +46,8 @@ def start(ck):
             'cookie': i,
             'origin': 'https://www.laowang555.com',
             'pragma': 'no-cache',
-            'referer': 'https://www.laowang555.com/24631.html',
-            'sec-ch-ua': '"Microsoft Edge";v="107", "Chromium";v="107", "Not=A?Brand";v="24"',
+            'referer': 'https://www.laowang555.com/',
+            'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Microsoft Edge";v="108"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"',
             'sec-fetch-dest': 'empty',
@@ -56,7 +56,6 @@ def start(ck):
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36 Edg/107.0.1418.42',
             'x-requested-with': 'XMLHttpRequest',
         }
-
         # 开始签到
         data = {
             'action': 'user_checkin',
@@ -64,6 +63,9 @@ def start(ck):
         # {'msg': '连续4天签到成功！ 积分+20 经验值+5', 'data': {'integral': 5, 'points': 20, 'time': '2022-11-18 15:51:55'}, 'continuous_day': 4, 'details_link': '<a data-class="modal-mini" mobile-bottom="true" data-height="240" data-remote="https://www.laowang555.com/wp-admin/admin-ajax.php?action=checkin_details_modal" class=" checkin-details-link" href="javascript:;" data-toggle="RefreshModal"></a>', 'error': False}
         res = requests.post('https://www.laowang555.com/wp-admin/admin-ajax.php', headers=headers,
                             data=data).json()
+        if res == 0:
+            print(name, '的Cookie已过期')
+            continue
         msg = res['msg']
 
         # 获取签到天数
