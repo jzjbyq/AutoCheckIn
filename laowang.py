@@ -36,7 +36,7 @@ def start(ck):
         print('环境变量格式错误, 程序退出')
         exit(0)
     for i in payload:
-        name = re.findall('.*\=(.*?)\%', i)[0]
+        name = re.findall('.*\=(.*?)[\%\|]', i)[0]
         headers = {
             'authority': 'www.laowang555.com',
             'accept': 'application/json, text/javascript, */*; q=0.01',
