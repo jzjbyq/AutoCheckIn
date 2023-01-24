@@ -5,7 +5,7 @@ cron: 0 8 * * *
 new Env('司机社签到');
 环境变量名称：XSIJISHE
 直接使用账号密码登录,格式: 账号&密码
-多个账号使用@间隔
+多个账号使用@或换行间隔
 青龙Python依赖, requests, lxml
 [task_local]
 #司机社签到
