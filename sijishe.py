@@ -68,6 +68,9 @@ def get_new_url():
             rhtml = etree.HTML(res.text)
 
             urls = checkstatus(rhtml)
+            if urls == '0':
+                print('所有站点都访问失败, 请检查自身网络')
+                exit(0)
             main_url = urls
             # print(main_url)
             return 1
@@ -78,7 +81,7 @@ def get_new_url():
         ot_num += 1
     exit(0)
 
-
+# 发布页中的3个站点按顺序自动切换
 def checkstatus(r_xpath):
     for i in range(1, 3):
         cs_url = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/@href')[0]
