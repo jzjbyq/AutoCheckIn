@@ -66,16 +66,31 @@ def get_new_url():
         try:
             res = requests.get(url)
             rhtml = etree.HTML(res.text)
-            urls = rhtml.xpath('//*[@id="main"]/div/div[2]/div/div/a[1]/@href')[0]
-            main_url = str(urls)
+
+            urls = checkstatus(rhtml)
+            main_url = urls
             # print(main_url)
             return 1
-        except:
+        except Exception as e:
+            print('错误内容', e)
             print(f'发布页地址获取失败，正在进行第{ot_num}/{ot_max_num}次重试')
         time.sleep(10)
         ot_num += 1
     exit(0)
 
+
+def checkstatus(r_xpath):
+    for i in range(1, 3):
+        cs_url = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/@href')[0]
+        try:
+            print('检测网址', cs_url)
+            cs_res = requests.get(cs_url)
+            if cs_res.status_code == 200:
+                print('网址', cs_url, '有效, 开始签到')
+                return cs_url
+        except:
+            print('网址', cs_url, '失败, 切换下一个地址')
+    return '0'
 
 # 初始化cookie和页面formhash信息
 def get_cookie_formhash():
