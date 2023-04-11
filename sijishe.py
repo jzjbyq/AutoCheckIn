@@ -65,7 +65,7 @@ def get_new_url():
     while ot_num < ot_max_num:
         try:
             res = requests.get(url)
-            rhtml = etree.HTML(res.text)
+            rhtml = etree.HTML(res.content.decode('utf-8'))
 
             urls = checkstatus(rhtml)
             if urls == '0':
@@ -81,18 +81,21 @@ def get_new_url():
         ot_num += 1
     exit(0)
 
-# 发布页中的3个站点按顺序自动切换
+# 发布页中的最新站点按顺序自动切换
 def checkstatus(r_xpath):
-    for i in range(1, 3):
-        cs_url = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/@href')[0]
-        try:
-            print('检测网址', cs_url)
-            cs_res = requests.get(cs_url)
-            if cs_res.status_code == 200:
-                print('网址', cs_url, '有效, 开始签到')
-                return cs_url
-        except:
-            print('网址', cs_url, '失败, 切换下一个地址')
+    r_xpath_num = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a')
+    for i in range(1, len(r_xpath_num)):
+        url_name = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/text()')[0]
+        if '最新地址' in url_name:
+            cs_url = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/@href')[0]
+            try:
+                print('检测网址', cs_url)
+                cs_res = requests.get(cs_url)
+                if cs_res.status_code == 200:
+                    print('网址', cs_url, '有效, 开始签到')
+                    return cs_url
+            except:
+                print('网址', cs_url, '失败, 切换下一个地址')
     return '0'
 
 # 初始化cookie和页面formhash信息
