@@ -11,20 +11,21 @@ cookie抓包 wordpress_sec_xxxxxxxxxx 即可
 #老王资源部落签到
 0 8 * * * https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/laowangziyuan.py, tag=老王资源部落签到, enabled=true
 [rewrite_local]
-https://www.laowang2021.com url script-request-header https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/laowangziyuan.py
+https://www.laowang2222.com url script-request-header https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/laowangziyuan.py
 """
 
 import re
 import os
 import requests
 import urllib3
+import time
 from sendNotify import send
 from lxml import etree
 
 urllib3.disable_warnings()
 send_content = ''
 
-
+#1
 def start(ck):
     global send_content
     try:
@@ -37,16 +38,20 @@ def start(ck):
         exit(0)
     for i in payload:
         name = re.findall('.*\=(.*?)[\%\|]', i)[0]
+        # 过期时间，盲猜，不一定准
+        end_time = re.findall('7C([0-9]{10})', i)[0]
+        timeArray = time.localtime(int(end_time))
+        end_time = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
         headers = {
-            'authority': 'www.laowang2021.com',
+            'authority': 'www.laowang2222.com',
             'accept': 'application/json, text/javascript, */*; q=0.01',
             'accept-language': 'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6',
             'cache-control': 'no-cache',
             'content-type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'cookie': i,
-            'origin': 'https://www.laowang2021.com',
+            'origin': 'https://www.laowang2222.com',
             'pragma': 'no-cache',
-            'referer': 'https://www.laowang2021.com/',
+            'referer': 'https://www.laowang2222.com/',
             'sec-ch-ua': '"Not?A_Brand";v="8", "Chromium";v="108", "Microsoft Edge";v="108"',
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"',
@@ -60,8 +65,8 @@ def start(ck):
         data = {
             'action': 'user_checkin',
         }
-        # {'msg': '连续4天签到成功！ 积分+20 经验值+5', 'data': {'integral': 5, 'points': 20, 'time': '2022-11-18 15:51:55'}, 'continuous_day': 4, 'details_link': '<a data-class="modal-mini" mobile-bottom="true" data-height="240" data-remote="https://www.laowang2021.com/wp-admin/admin-ajax.php?action=checkin_details_modal" class=" checkin-details-link" href="javascript:;" data-toggle="RefreshModal"></a>', 'error': False}
-        res = requests.post('https://www.laowang2021.com/wp-admin/admin-ajax.php', headers=headers,
+        # {'msg': '连续4天签到成功！ 积分+20 经验值+5', 'data': {'integral': 5, 'points': 20, 'time': '2022-11-18 15:51:55'}, 'continuous_day': 4, 'details_link': '<a data-class="modal-mini" mobile-bottom="true" data-height="240" data-remote="https://www.laowang2222.com/wp-admin/admin-ajax.php?action=checkin_details_modal" class=" checkin-details-link" href="javascript:;" data-toggle="RefreshModal"></a>', 'error': False}
+        res = requests.post('https://www.laowang2222.com/wp-admin/admin-ajax.php', headers=headers,
                             data=data).json()
         if res == 0:
             print(name, '的Cookie已过期')
@@ -74,7 +79,7 @@ def start(ck):
             'action': 'checkin_details_modal',
         }
         try:
-            res = requests.get('https://www.laowang2021.com/wp-admin/admin-ajax.php', params=params, headers=headers)
+            res = requests.get('https://www.laowang2222.com/wp-admin/admin-ajax.php', params=params, headers=headers)
             qday = re.findall(r'<badge class="c-blue">(.*)</badge>', res.text)[0]
             # print(qday)
         except:
@@ -82,7 +87,7 @@ def start(ck):
 
         # 获取当前积分数
         try:
-            res = requests.get('https://www.laowang2021.com/user/balance', headers=headers)
+            res = requests.get('https://www.laowang2222.com/user/balance', headers=headers)
             rhtml = etree.HTML(res.text)
             integral = rhtml.xpath('//*[@id="user-tab-balance"]/div[1]/div[1]/div/div/div[2]/div[1]/span/text()')[0]
         except Exception as e:
@@ -91,8 +96,8 @@ def start(ck):
         xm = "账户【" + name + "】"
         xm = xm.center(24, '=')
         print(
-            f'{xm}\n签到状态: {msg} \n当前积分: {integral}\n累计签到：{qday}天\n\n')
-        send_content += f'{xm}\n签到状态: {msg} \n当前积分: {integral}\n累计签到：{qday}天\n\n'
+            f'{xm}\n签到状态: {msg} \n当前积分: {integral}\n累计签到：{qday}天\nCK过期时间: {end_time}\n\n')
+        send_content += f'{xm}\n签到状态: {msg} \n当前积分: {integral}\n累计签到：{qday}天\nCK过期时间：{end_time}\n\n'
 
     send('老王资源部落签到', send_content)
 
