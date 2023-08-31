@@ -7,16 +7,17 @@
 0 8,22 * * * https://raw.githubusercontent.com/jzjbyq/AutoCheckIn/main/lvyuan.py, tag=绿源电动车签到, enabled=true
 """
 
+import json
 import os
 import re
+
 import requests
-import json
-from sendNotify import send
 import urllib3
+
+from sendNotify import send
 
 urllib3.disable_warnings()
 send_content = ''
-
 
 def start(ck):
     global send_content
