@@ -3,8 +3,10 @@
 """
 cron: 0 8 * * *
 new Env('司机社签到');
-环境变量名称：XSIJISHE
-直接使用账号密码登录,格式: 账号&密码
+环境变量名称：XSIJISHE, XSIJISHE_URL
+没有实现idhash的获取，所以需要登录后抓取cookie, 和设置你网络可以打开的网页地址
+cookie需要的键值：SgL6_2132_saltkey, SgL6_2132_auth
+变量中cookie格式(第二个键值后边不用分号): SgL6_2132_saltkey=xxxxxxxx; SgL6_2132_auth=xxxxxxx
 多个账号使用@或换行间隔
 青龙Python依赖, requests, lxml
 [task_local]
@@ -15,14 +17,14 @@ https://sijishea.com url script-request-header https://raw.githubusercontent.com
 """
 
 import os
-from lxml import etree
-import time
-from sendNotify import send
-import urllib3
 import re
-import hashlib
+import time
+
 import requests
-import random
+import urllib3
+from lxml import etree
+
+from sendNotify import send
 
 urllib3.disable_warnings()
 
@@ -40,107 +42,6 @@ main_url = ''
 headers = {}
 
 
-def string_to_md5(key):
-    md5 = hashlib.md5()
-    md5.update(key.encode("utf-8"))
-    return md5.hexdigest()
-
-
-def getrandom(code_len):
-    all_char = 'qazwsxedcrfvtgbyhnujmikolpQAZWSXEDCRFVTGBYHNUJIKOLP'
-    index = len(all_char) - 1
-    code = ''
-    for _ in range(code_len):
-        num = random.randint(0, index)
-        code += all_char[num]
-    return code
-
-
-# 从发布页获取网站地址
-def get_new_url():
-    global main_url
-    url = 'https://sijishe.me/'
-    ot_num = 1
-    ot_max_num = 10
-    while ot_num < ot_max_num:
-        try:
-            res = requests.get(url)
-            rhtml = etree.HTML(res.content.decode('utf-8'))
-
-            urls = checkstatus(rhtml)
-            if urls == '0':
-                print('所有站点都访问失败, 请检查自身网络')
-                exit(0)
-            main_url = urls
-            # print(main_url)
-            return 1
-        except Exception as e:
-            print('错误内容', e)
-            print(f'发布页地址获取失败，正在进行第{ot_num}/{ot_max_num}次重试')
-        time.sleep(10)
-        ot_num += 1
-    exit(0)
-
-# 发布页中的最新站点按顺序自动切换
-def checkstatus(r_xpath):
-    r_xpath_num = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a')
-    for i in range(1, len(r_xpath_num)):
-        url_name = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/text()')[0]
-        if '最新地址' in url_name:
-            cs_url = r_xpath.xpath(f'//*[@id="main"]/div/div[2]/div/div/a[{str(i)}]/@href')[0]
-            try:
-                print('检测网址', cs_url)
-                cs_res = requests.get(cs_url)
-                if cs_res.status_code == 200:
-                    print('网址', cs_url, '有效, 开始签到')
-                    return cs_url
-            except:
-                print('网址', cs_url, '失败, 切换下一个地址')
-    return '0'
-
-# 初始化cookie和页面formhash信息
-def get_cookie_formhash():
-    global formhash
-    formhash = ''
-    response = requests.get(main_url + '/member.php?mod=logging&action=login&frommessage')
-    # response.cookies 返回为cookiejar，需转成json方便使用
-    cookiejar_to_json(response.cookies)
-    # print(cookies)
-    formhash = re.findall(r'<input type="hidden" name="formhash" value="(.*)" />', response.text)[0]
-    # print(formhash[0])
-
-
-# cookiejar转为json
-def cookiejar_to_json(Rcookie):
-    global cookies
-    for item in Rcookie:
-        cookies[item.name] = item.value
-
-
-def login(username, password):
-    data = {
-        'formhash': formhash,
-        'referer': main_url + '/home.php?mod=space&do=pm&filter=newpm',
-        'username': username,
-        'password': password,
-        'questionid': '0',
-        'answer': '',
-    }
-
-    login_url = main_url + '/member.php?mod=logging&action=login&loginsubmit=yes&frommessage&loginhash=Lt' + getrandom(
-        3) + '&inajax=1'
-    try:
-        response = requests.post(login_url, cookies=cookies, headers=headers, data=data)
-        cookiejar_to_json(response.cookies)
-        response.text.index('欢迎您回来')
-        # print('登录成功')
-        # print(cookies)
-        return 1
-    except:
-        print(f'账号{username}登录失败，请检查账号密码, 可能是验证码问题，等待更新...')
-        return 0
-
-
 def start(postdata):
     # 账号数据按格式分割
     global send_content
@@ -154,25 +55,29 @@ def start(postdata):
         print(e)
         exit(0)
     global checkIn_status
-
+    global cookies
     for i in payload:
         try:
-            u = i.split('&')
-            # 读取账号到变量，密码为md5编码后的字符串
-            name = u[0]
-            pwd = string_to_md5(u[1])
+            data = i
         except:
             print('账号参数格式错误')
             break
-
-        # 刷新cookie和formhash值，用作登录
-        get_cookie_formhash()
-        if not login(name, pwd):
-            send_content += f'账号{name}登录失败,请检查账号密码\n\n'
-            continue
+        for item in data.split(";"):
+            key, value = item.strip().split("=")
+            cookies[key] = value
         headers = {
-            'referer': main_url + '/',
-            'user-agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36 Edg/101.0.1210.39'
+            'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
+            'accept-language': 'zh-CN,zh;q=0.9',
+            'cache-control': 'max-age=0',
+            'sec-ch-ua': '"Chromium";v="122", "Not(A:Brand";v="24", "Microsoft Edge";v="122"',
+            'sec-ch-ua-mobile': '?0',
+            'sec-ch-ua-platform': '"Windows"',
+            'sec-fetch-dest': 'document',
+            'sec-fetch-mode': 'navigate',
+            'sec-fetch-site': 'none',
+            'sec-fetch-user': '?1',
+            'upgrade-insecure-requests': '1',
+            'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36 Edg/122.0.0.0',
         }
         s = requests.session()
         # s.proxies = {'https': '101.200.127.149:3129', }
@@ -216,7 +121,6 @@ def printUserInfo():
 
     try:
         res = s.request("GET", main_url + sign_url, cookies=cookies, headers=headers, timeout=30, verify=False)
-        # print(res.text)
         rhtml = etree.HTML(res.text)
     except Exception as e:
         print('访问用户信息失败，Cookie失效')
@@ -269,13 +173,14 @@ def printUserInfo():
 
 # 阿里云函数入口
 def handler(event, context):
+    global main_url
     try:
         _postdata = os.environ['XSIJISHE']
+        main_url = os.environ['XSIJISHE_URL']
     except Exception:
-        print('未设置环境变量 XSIJISHE')
+        print('未设置正确的环境变量 XSIJISHE, XSIJISHE_URL')
         exit(0)
-    if get_new_url():
-        start(_postdata)
+    start(_postdata)
     exit(0)
 
 
