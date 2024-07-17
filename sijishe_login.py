@@ -1,3 +1,7 @@
+"""
+使用该脚本进行登录
+登录后会保存相应的cookie信息到 cookies.txt
+"""
 import time
 import json
 from selenium import webdriver
