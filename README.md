@@ -42,7 +42,15 @@ apk add chromium
 apk add chromium-chromedriver
 ```
 
-3、使用 python代码 测试是否安装成功，以上安装没问题，可以不用测试
+3、如果遇到报错，查看报错内容是不是selenium和chromedriver版本不匹配造成的
+
+```
+# 降级安装对应的版本
+pip install urllib3==2.1.0
+pip install selenium==4.8.0
+```
+
+4、使用 python代码 测试是否安装成功，以上安装没问题，可以不用测试
 
 ```
 # -*-coding: utf-8 -*-

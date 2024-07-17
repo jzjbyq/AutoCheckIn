@@ -8,7 +8,7 @@ from selenium import webdriver
 
 options = webdriver.ChromeOptions()
 options.binary_location = "chrome-win64/chrome.exe"
-driver = webdriver.Chrome(chrome_options=options, executable_path='webdriver/chromedriver.exe')
+driver = webdriver.Chrome(options=options, executable_path='webdriver/chromedriver.exe')
 # 自行替换下边的域名为你可以访问的
 driver.get('https://sjs47.me/home.php?mod=space')
 
