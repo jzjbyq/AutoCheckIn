@@ -13,4 +13,46 @@
 
 3、增加老王部落签到，可获取签到积分奖励，每7天一轮每日奖励
 
-4、绿原会员小程序签到，签到获取的积分可以在商城优惠兑换物品，部分可使用积分全免费兑换。
+
+
+sijishe由20240717开始只支持docker版青龙，其它方式请自行研究使用
+
+sijishe网站做了加密，由于不懂js，索性直接换selenium方式来搞定，关于青龙面板
+安装selenium和对应的chromiumdriver安装方式，看下边的说明吧
+
+青龙面板中可以直接安装 selenium 依赖
+
+安装chromium, 先进入到docker青龙的控制台中
+
+```
+docker exec -it qinglong bash
+```
+
+按照下边步骤进行安装
+1、切换国内镜像源
+
+```
+sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+```
+
+2、安装chromium以及chromiumdriver
+
+```
+apk add chromium
+apk add chromium-chromedriver
+```
+
+3、使用 python代码 测试是否安装成功，以上安装没问题，可以不用测试
+
+```
+# -*-coding: utf-8 -*-
+from selenium import webdriver
+chrome_options = webdriver.ChromeOptions()
+chrome_options.add_argument('--headless')
+chrome_options.add_argument('--no-sandbox')
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--disable-dev-shm-usage')
+driver = webdriver.Chrome(options=chrome_options)
+driver.get('https://www.baidu.com')
+print(driver.title)
+```
