@@ -1,5 +1,4 @@
 # -*- coding: utf8 -*-
-
 """
 cron: 0 8 * * *
 new Env('司机社签到');
