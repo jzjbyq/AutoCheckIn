@@ -56,3 +56,5 @@ driver = webdriver.Chrome(options=chrome_options)
 driver.get('https://www.baidu.com')
 print(driver.title)
 ```
+
+sijishe_login.py 用到的组件 https://jzjbyq.lanzouo.com/ilFmi24pabha
