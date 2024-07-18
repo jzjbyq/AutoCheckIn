@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+
 """
 cron: 0 8 * * *
 new Env('司机社签到');
@@ -68,7 +69,7 @@ def start(postdata):
             rhtml = etree.HTML(res)
             # cookiejar_to_json(res.cookies)
             # print(res.text)
-            qiandao_url = rhtml.xpath('//*[@id="JD_sign"]/@href')[0]
+            qiandao_url = rhtml.xpath('//*[@id="k_misign_topb"]/a/@href')[0]
             # print(qiandao_url)
         except:
             # print('今日已签到')
@@ -76,7 +77,7 @@ def start(postdata):
 
         try:
             get_page_source(main_url + '/' + qiandao_url, cookies)
-            print('签到成功')
+            # print('签到成功')
             checkIn_status = 1
         except Exception as e:
             # print(e)
