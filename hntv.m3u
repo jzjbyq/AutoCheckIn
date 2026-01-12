@@ -1,0 +1,281 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="央视", CCTV-1综合
+http://219.150.217.47:6610/PLTV1/40/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="106" tvg-name="CCTV4K" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="央视", CCTV1-4K
+http://123.160.108.7:6610/PLTV1/190059/1.m3u8?
+#EXTINF:-1 tvg-id="2" tvg-name="CCTV2" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV2.png" group-title="央视", CCTV-2财经
+http://219.150.217.47:6610/PLTV1/60/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="3" tvg-name="CCTV3" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV3.png" group-title="央视", CCTV-3综艺
+http://219.150.217.47:6610/PLTV1/80/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="4" tvg-name="CCTV4" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4.png" group-title="央视", CCTV-4中文国际
+http://219.150.217.47:6610/PLTV1/100/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="5" tvg-name="CCTV5" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV5.png" group-title="央视", CCTV-5体育
+http://219.150.217.47:6610/PLTV1/120/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="7" tvg-name="CCTV6" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV6.png" group-title="央视", CCTV-6电影
+http://219.150.217.47:6610/PLTV1/140/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="8" tvg-name="CCTV7" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV7.png" group-title="央视", CCTV-7国防军事
+http://219.150.217.47:6610/PLTV1/160/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="9" tvg-name="CCTV8" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV8.png" group-title="央视", CCTV-8电视剧
+http://219.150.217.47:6610/PLTV1/180/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="10" tvg-name="CCTV9" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV9.png" group-title="央视", CCTV-9纪录
+http://219.150.217.47:6610/PLTV1/200/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="11" tvg-name="CCTV10" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV10.png" group-title="央视", CCTV-10科教
+http://219.150.217.47:6610/PLTV1/220/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="12" tvg-name="CCTV11" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV11.png" group-title="央视", CCTV-11戏曲
+http://219.150.217.47:6610/PLTV1/240/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="13" tvg-name="CCTV12" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV12.png" group-title="央视", CCTV-12社会与法
+http://219.150.217.47:6610/PLTV1/260/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="14" tvg-name="CCTV13" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV13.png" group-title="央视", CCTV-13新闻
+http://219.150.217.47:6610/PLTV1/280/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="15" tvg-name="CCTV14" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV14.png" group-title="央视", CCTV-14少儿
+http://219.150.217.47:6610/PLTV1/300/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="16" tvg-name="CCTV15" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV15.png" group-title="央视", CCTV-15音乐
+http://219.150.217.47:6610/PLTV1/320/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="20" tvg-name="CGTN" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/cgtn.png" group-title="CGTN", CGTN
+http://219.150.217.47:6610/PLTV1/340/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="17" tvg-name="CCTV17" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV17.png" group-title="央视", CCTV-17
+http://219.150.217.47:6610/PLTV1/360/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="6" tvg-name="CCTV5+" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV5+.png" group-title="央视", CCTV-5+体育赛事
+http://219.150.217.47:6610/PLTV1/380/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="CETV1" tvg-logo="" group-title="央视", CETV1
+http://219.150.217.47:6610/PLTV1/400/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="28" tvg-name="浙江卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/zhejiang.png" group-title="卫视", 浙江卫视
+http://219.150.217.47:6610/PLTV1/960/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="31" tvg-name="东方卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongfang.png" group-title="卫视", 东方卫视
+http://219.150.217.47:6610/PLTV1/980/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="29" tvg-name="江苏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangsu.png" group-title="卫视", 江苏卫视
+http://219.150.217.47:6610/PLTV1/1000/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="30" tvg-name="北京卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/beijing.png" group-title="卫视", 北京卫视
+http://219.150.217.47:6610/PLTV1/1020/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="33" tvg-name="广东卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangdong.png" group-title="卫视", 广东卫视
+http://219.150.217.47:6610/PLTV1/1040/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="46" tvg-name="黑龙江卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/heilongjiang.png" group-title="卫视", 黑龙江卫视
+http://219.150.217.47:6610/PLTV1/1060/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="38" tvg-name="山东卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shandong.png" group-title="卫视", 山东卫视
+http://219.150.217.47:6610/PLTV1/1080/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="32" tvg-name="安徽卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/anhui.png" group-title="卫视", 安徽卫视
+http://219.150.217.47:6610/PLTV1/1100/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="36" tvg-name="辽宁卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/liaoning.png" group-title="卫视", 辽宁卫视
+http://219.150.217.47:6610/PLTV1/1120/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="55" tvg-name="陕西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi.png" group-title="卫视", 陕西卫视
+http://219.150.217.47:6610/PLTV1/1140/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="45" tvg-name="河北卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hebei.png" group-title="卫视", 河北卫视
+http://219.150.217.47:6610/PLTV1/1180/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="50" tvg-name="江西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jiangxi.png" group-title="卫视", 江西卫视
+http://219.150.217.47:6610/PLTV1/1200/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="27" tvg-name="湖南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hunan.png" group-title="卫视", 湖南卫视
+http://219.150.217.47:6610/PLTV1/1220/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="34" tvg-name="深圳卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shenzhen.png" group-title="卫视", 深圳卫视
+http://219.150.217.47:6610/PLTV1/1240/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="56" tvg-name="四川卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/sichuan.png" group-title="卫视", 四川卫视
+http://219.150.217.47:6610/PLTV1/1260/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="48" tvg-name="湖北卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/hubei.png" group-title="卫视", 湖北卫视
+http://219.150.217.47:6610/PLTV1/1280/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="39" tvg-name="天津卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/tianjin.png" group-title="卫视", 天津卫视
+http://219.150.217.47:6610/PLTV1/1300/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="58" tvg-name="云南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/yunnan.png" group-title="卫视", 云南卫视
+http://219.150.217.47:6610/PLTV1/1320/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="40" tvg-name="重庆卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/chongqing.png" group-title="卫视", 重庆卫视
+http://219.150.217.47:6610/PLTV1/1340/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="51" tvg-name="吉林卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/jilin.png" group-title="卫视", 吉林卫视
+http://219.150.217.47:6610/PLTV1/1360/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="41" tvg-name="东南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/dongnan.png" group-title="卫视", 东南卫视
+http://219.150.217.47:6610/PLTV1/1400/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="43" tvg-name="广西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guangxi.png" group-title="卫视", 广西卫视
+http://219.150.217.47:6610/PLTV1/1440/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="37" tvg-name="旅游卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/lvyou.png" group-title="卫视", 海南卫视
+http://219.150.217.47:6610/PLTV1/1480/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="42" tvg-name="甘肃卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/gansu.png" group-title="卫视", 甘肃卫视
+http://219.150.217.47:6610/PLTV1/1500/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="47" tvg-name="河南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/henan.png" group-title="河南", 河南卫视
+http://219.150.217.47:6610/PLTV1/580/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="47" tvg-name="河南卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/henan.png" group-title="河南", 河南卫视4K测试
+http://219.150.217.47:6610/PLTV2/2780/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="30" tvg-name="北京卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/beijing.png" group-title="河南", 北京卫视4K
+http://123.160.108.15:6610/PLTV1/190057/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 都市频道
+http://219.150.217.47:6610/PLTV1/600/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 民生频道
+http://219.150.217.47:6610/PLTV1/620/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 法治频道
+http://219.150.217.47:6610/PLTV1/640/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 电视剧频道
+http://219.150.217.47:6610/PLTV1/660/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 河南国际
+http://219.150.217.47:6610/PLTV1/680/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 睛彩中原
+http://219.150.217.47:6610/PLTV1/700/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻频道
+http://219.150.217.47:6610/PLTV1/720/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 公共频道
+http://219.150.217.47:6610/PLTV1/760/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 乡村频道
+http://219.150.217.47:6610/PLTV1/780/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 移动戏曲
+http://219.150.217.47:6610/PLTV1/800/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 收藏天下
+http://219.150.217.47:6610/PLTV1/820/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 河南戏曲
+http://219.150.217.47:6610/PLTV1/840/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 中华功夫
+http://219.150.217.47:6610/PLTV1/860/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 美食汇
+http://219.150.217.47:6610/PLTV1/880/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 棋牌汇
+http://219.150.217.47:6610/PLTV1/900/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 调节剧场
+http://219.150.217.47:6610/PLTV1/920/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="河南", CCTV1
+http://219.150.217.47:6610/PLTV1/940/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="44" tvg-name="贵州卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/guizhou.png" group-title="河南", 贵州卫视
+http://219.150.217.47:6610/PLTV1/1160/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="53" tvg-name="宁夏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/ningxia.png" group-title="河南", 宁夏卫视
+http://219.150.217.47:6610/PLTV1/1380/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="52" tvg-name="内蒙古卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/neimeng.png" group-title="河南", 内蒙古卫视
+http://219.150.217.47:6610/PLTV1/1420/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="54" tvg-name="山西卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/shanxi_.png" group-title="河南", 山西卫视
+http://219.150.217.47:6610/PLTV1/1460/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="59" tvg-name="青海卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/qinghai.png" group-title="河南", 青海卫视
+http://219.150.217.47:6610/PLTV1/1520/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="69" tvg-name="金鹰卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jinyingkatong.png" group-title="河南", 金鹰卡通
+http://219.150.217.47:6610/PLTV1/1540/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1434" tvg-name="嘉佳卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/jiajiakt.png" group-title="河南", 嘉佳卡通
+http://219.150.217.47:6610/PLTV1/1560/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="67" tvg-name="卡酷动画" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/kaku.png" group-title="河南", 卡酷少儿
+http://219.150.217.47:6610/PLTV1/1580/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="62" tvg-name="哈哈炫动" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/xuandong.png" group-title="河南", 哈哈炫动
+http://219.150.217.47:6610/PLTV1/1600/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="57" tvg-name="新疆卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xinjiang.png" group-title="河南", 新疆卫视
+http://219.150.217.47:6610/PLTV1/1620/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="71" tvg-name="西藏卫视" tvg-logo="http://epg.51zmt.top:8000/tb1/ws/xizang.png" group-title="河南", 西藏卫视
+http://219.150.217.47:6610/PLTV1/1640/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="348" tvg-name="优漫卡通" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/youman.png" group-title="河南", 优漫卡通
+http://219.150.217.47:6610/PLTV1/1660/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 郑州电视
+http://219.150.217.47:6610/PLTV1/1680/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 商都频道
+http://219.150.217.47:6610/PLTV1/1700/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 文体旅游
+http://219.150.217.47:6610/PLTV1/1720/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 豫剧频道
+http://219.150.217.47:6610/PLTV1/1740/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 妇女儿童
+http://219.150.217.47:6610/PLTV1/1760/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 都市生活
+http://219.150.217.47:6610/PLTV1/1780/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV1/1800/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 文化旅游
+http://219.150.217.47:6610/PLTV1/1820/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 洛阳新闻
+http://219.150.217.47:6610/PLTV1/1840/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 科教频道
+http://219.150.217.47:6610/PLTV1/1860/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 文旅频道
+http://219.150.217.47:6610/PLTV1/1880/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV1/1900/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 城市频道
+http://219.150.217.47:6610/PLTV1/1920/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 公共频道
+http://219.150.217.47:6610/PLTV1/1940/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV1/1960/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 安阳文旅
+http://219.150.217.47:6610/PLTV1/1980/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 鹤壁新闻
+http://219.150.217.47:6610/PLTV1/2000/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新乡新闻
+http://219.150.217.47:6610/PLTV2/2020/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新乡公共
+http://219.150.217.47:6610/PLTV2/2040/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 焦作综合
+http://219.150.217.47:6610/PLTV2/2060/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 焦作公共
+http://219.150.217.47:6610/PLTV2/2080/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 大美河南
+http://219.150.217.47:6610/PLTV2/2100/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 濮阳公共
+http://219.150.217.47:6610/PLTV2/2120/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 濮阳综合
+http://219.150.217.47:6610/PLTV2/2140/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 农业科教
+http://219.150.217.47:6610/PLTV2/2160/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 许昌综合
+http://219.150.217.47:6610/PLTV2/2180/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 大美河南
+http://219.150.217.47:6610/PLTV2/2200/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV2/2240/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV2/2260/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 公共频道
+http://219.150.217.47:6610/PLTV2/2280/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 文体科教
+http://219.150.217.47:6610/PLTV2/2300/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 周口新闻
+http://219.150.217.47:6610/PLTV2/2320/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 周口公共
+http://219.150.217.47:6610/PLTV2/2340/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 周口教育
+http://219.150.217.47:6610/PLTV2/2360/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV2/2380/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 科教频道
+http://219.150.217.47:6610/PLTV2/2400/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 公共频道
+http://219.150.217.47:6610/PLTV2/2420/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 南阳新闻
+http://219.150.217.47:6610/PLTV2/2440/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 南阳公共
+http://219.150.217.47:6610/PLTV2/2460/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 南阳科教
+http://219.150.217.47:6610/PLTV2/2480/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 信阳新闻
+http://219.150.217.47:6610/PLTV2/2500/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 信阳文旅
+http://219.150.217.47:6610/PLTV2/2520/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 信阳狮河
+http://219.150.217.47:6610/PLTV2/2540/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 平桥广电
+http://219.150.217.47:6610/PLTV2/2560/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 济源1
+http://219.150.217.47:6610/PLTV2/2580/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="河南", CCTV1
+http://219.150.217.47:6610/PLTV2/2600/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 舞钢电视
+http://219.150.217.47:6610/PLTV2/2620/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 内黄综合
+http://219.150.217.47:6610/PLTV2/2640/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 项城综合
+http://219.150.217.47:6610/PLTV2/2660/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="河南", CCTV1
+http://219.150.217.47:6610/PLTV2/2680/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 大美河南
+http://219.150.217.47:6610/PLTV2/2700/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1" tvg-name="CCTV1" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV1.png" group-title="河南", CCTV1
+http://219.150.217.47:6610/PLTV2/2720/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV2/2740/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 综合
+http://219.150.217.47:6610/PLTV2/2760/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="1679" tvg-name="国学" tvg-logo="http://epg.51zmt.top:8000/tb1/qt/SHUOWENJIEZI.jpg" group-title="河南", 国学频道
+http://219.150.217.47:6610/PLTV2/3720/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", MCTV
+http://219.150.217.47:6610/PLTV2/3860/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合
+http://219.150.217.47:6610/PLTV2/3900/index.m3u8?icpid=dxrm1
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 平顶山教育
+http://123.160.108.7:6610/PLTV1/190015/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 叶县电视
+http://123.160.108.7:6610/PLTV1/190019/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新闻综合频道
+http://123.160.108.7:6610/PLTV1/190029/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 洛宁新闻
+http://123.160.108.7:6610/PLTV1/190041/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 新安频道
+http://123.160.108.7:6610/PLTV1/190043/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 华龙有线
+http://123.160.108.7:6610/PLTV1/190045/1.m3u8?
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 鲁山新闻
+http://123.160.108.7:6610/PLTV1/190053/1.m3u8?
