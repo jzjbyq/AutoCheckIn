@@ -346,8 +346,18 @@ http://123.160.108.7:6610/PLTV1/190045/1.m3u8?
 #EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 未知新闻综合
 http://222.85.25.226/PLTV/88888888/224/3221227221/1.m3u8
 
+#EXTINF:-1 tvg-id="" tvg-name="noepg" tvg-logo="" group-title="河南", 赛里木湖
+https://hngd-cdn-hls-pull-tx-1.hntv.tv/saas_live/e874742c8fd548129d20b3e6ecb8bdaa_6000/playlist.m3u8?wsSecret=78a3ce24555528736a5e2b931f722ab8&wsTime=2021250514
 
 
+#EXTINF:-1 tvg-name="1983年春晚" tvg-id="1983年春晚" tvg-logo="https://tb.zbds.top/logo/1983年春晚.png" group-title="春晚频道", 1983年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/31/15/BMjAyMjAxMzExNTU5MTRfNDAzMDAxOTlfNjYyNzMxNjcwMjBfMF8z_b_Beb3bda599f76c60c463c433ca7460153.mp4
+#EXTINF:-1 tvg-name="1984年春晚" tvg-id="1984年春晚" tvg-logo="https://tb.zbds.top/logo/1984年春晚.png" group-title="春晚频道", 1984年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/31/15/BMjAyMjAxMzExNTU5NTRfNDAzMDAxOTlfNjYyNzMyMzg3MTRfMF8z_b_B192356dadbc90d207ba16964d4c2914c.mp4
+#EXTINF:-1 tvg-name="1985年春晚" tvg-id="1985年春晚" tvg-logo="https://tb.zbds.top/logo/1985年春晚.png" group-title="春晚频道", 1985年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/31/16/BMjAyMjAxMzExNjAwMDFfNDAzMDAxOTlfNjYyNzMyNTAwMzJfMF8z_b_Be73c5abcbc0eeb2ec9fce6842e1362a4.mp4
+#EXTINF:-1 tvg-name="1986年春晚" tvg-id="1986年春晚" tvg-logo="https://tb.zbds.top/logo/1986年春晚.png" group-title="春晚频道", 1986年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/31/16/BMjAyMjAxMzExNjAwMDRfNDAzMDAxOTlfNjYyNzMyNTU0OTRfMF8z_b_B24f7d19f1132fa5d7f502f8377ad5567.mp4
 #EXTINF:-1 tvg-name="1987年春晚" tvg-id="1987年春晚" tvg-logo="https://tb.zbds.top/logo/1987年春晚.png" group-title="春晚频道", 1987年春晚
 https://txmov2.a.kwimgs.com/bs3/video-hls/5195746663405928031_hlsb.m3u8
 #EXTINF:-1 tvg-name="1988年春晚" tvg-id="1988年春晚" tvg-logo="https://tb.zbds.top/logo/1988年春晚.png" group-title="春晚频道", 1988年春晚
@@ -362,6 +372,8 @@ https://alimov2.a.kwimgs.com/upic/2023/01/13/22/BMjAyMzAxMTMyMjEwMDNfNDAzMDAxOTl
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQwNzVfMF8z_b_B811c0dec6b9a3d3074a18522c185010a.mp4
 #EXTINF:-1 tvg-name="1996年春晚" tvg-id="1996年春晚" tvg-logo="https://tb.zbds.top/logo/1996年春晚.png" group-title="春晚频道", 1996年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/22/BMjAyMzAxMTMyMjEwMDNfNDAzMDAxOTlfOTM1MTIzMzYxNTJfMF8z_b_Bd841eae10ab1c9955ef55fbedfae6c45.mp4
+#EXTINF:-1 tvg-name="1999年春晚" tvg-id="1999年春晚" tvg-logo="https://tb.zbds.top/logo/1999年春晚.png" group-title="春晚频道", 1999年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQxNTRfMF8z_b_B0b5e52bc003285ef66ec0cbb2be08556.mp4
 #EXTINF:-1 tvg-name="2000年春晚" tvg-id="2000年春晚" tvg-logo="https://tb.zbds.top/logo/2000年春晚.png" group-title="春晚频道", 2000年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/21/BMjAyMzAxMTMyMTE4MzRfNDAzMDAxOTlfOTM1MDY4ODIxMTNfMF8z_b_Bdddf4e7ef0ff6cfd477857bb40e78419.mp4
 #EXTINF:-1 tvg-name="2001年春晚" tvg-id="2001年春晚" tvg-logo="https://tb.zbds.top/logo/2001年春晚.png" group-title="春晚频道", 2001年春晚
@@ -378,17 +390,39 @@ https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTl
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQyNzlfMF8z_b_Bbc3703fc331dc994c50859c19aad28ff.mp4
 #EXTINF:-1 tvg-name="2007年春晚" tvg-id="2007年春晚" tvg-logo="https://tb.zbds.top/logo/2007年春晚.png" group-title="春晚频道", 2007年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQzMjNfMF8z_b_B00b069c7899976459ceeaa99353dfefe.mp4
+#EXTINF:-1 tvg-name="2008年春晚" tvg-id="2008年春晚" tvg-logo="https://tb.zbds.top/logo/2008年春晚.png" group-title="春晚频道", 2008年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQzNTNfMF8z_b_Bd7346962e61bd7b84e11a1fa6e4616f9.mp4
 #EXTINF:-1 tvg-name="2009年春晚" tvg-id="2009年春晚" tvg-logo="https://tb.zbds.top/logo/2009年春晚.png" group-title="春晚频道", 2009年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQzOTBfMF8z_b_B29a36a85e0277f6c2a1f033ef7c10708.mp4
 #EXTINF:-1 tvg-name="2010年春晚" tvg-id="2010年春晚" tvg-logo="https://tb.zbds.top/logo/2010年春晚.png" group-title="春晚频道", 2010年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ0MjlfMF8z_b_B8818807a00eed329a69fb494f405bd43.mp4
+#EXTINF:-1 tvg-name="2011年春晚" tvg-id="2011年春晚" tvg-logo="https://tb.zbds.top/logo/2011年春晚.png" group-title="春晚频道", 2011年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/16/11/BMjAyMzAxMTYxMTA3MjFfNDAzMDAxOTlfOTM3MjcyMjA3ODhfMF8z_b_B8214200efc869dc6fcf99dad619fa4c1.mp4
+#EXTINF:-1 tvg-name="2012年春晚" tvg-id="2012年春晚" tvg-logo="https://tb.zbds.top/logo/2012年春晚.png" group-title="春晚频道", 2012年春晚
+https://cdn8.yzzy-online.com/20220704/591_82b72f82/1000k/hls/index.m3u8
 #EXTINF:-1 tvg-name="2013年春晚" tvg-id="2013年春晚" tvg-logo="https://tb.zbds.top/logo/2013年春晚.png" group-title="春晚频道", 2013年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ1NjNfMF8z_b_B4fea55408dca4471a68a963ae096be59.mp4
 #EXTINF:-1 tvg-name="2014年春晚" tvg-id="2014年春晚" tvg-logo="https://tb.zbds.top/logo/2014年春晚.png" group-title="春晚频道", 2014年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTNfNDAzMDAxOTlfOTI4OTY2ODAzNjlfMF8z_b_Bdee65c77f9e7b2120a185c919dad81d2.mp4
+#EXTINF:-1 tvg-name="2015年春晚" tvg-id="2015年春晚" tvg-logo="https://tb.zbds.top/logo/2015年春晚.png" group-title="春晚频道", 2015年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ2MTZfMF8z_b_B4851f43f5a2bc2871a9b0ec87294a6e7.mp4
+#EXTINF:-1 tvg-name="2016年春晚" tvg-id="2016年春晚" tvg-logo="https://tb.zbds.top/logo/2016年春晚.png" group-title="春晚频道", 2016年春晚
+https://cdn8.yzzy-online.com/20220704/577_cda9c8d1/1000k/hls/index.m3u8
+#EXTINF:-1 tvg-name="2017年春晚" tvg-id="2017年春晚" tvg-logo="https://tb.zbds.top/logo/2017年春晚.png" group-title="春晚频道", 2017年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/13/20/BMjAyMzAxMTMyMDA5MjJfNDAzMDAxOTlfOTM0OTkwNDQ2NDhfMF8z_b_B6527b0c2ce3dda1d9b3f34edd4fdb9aa.mp4
 #EXTINF:-1 tvg-name="2018年春晚" tvg-id="2018年春晚" tvg-logo="https://tb.zbds.top/logo/2018年春晚.png" group-title="春晚频道", 2018年春晚
 https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTRfNDAzMDAxOTlfOTI4OTY2ODE2MTBfMF8z_b_B11a778e34390a21de42d407e94f45b91.mp4
+#EXTINF:-1 tvg-name="2019年春晚" tvg-id="2019年春晚" tvg-logo="https://tb.zbds.top/logo/2019年春晚.png" group-title="春晚频道", 2019年春晚
+https://alimov2.a.kwimgs.com/upic/2023/01/06/16/BMjAyMzAxMDYxNjMxMTRfNDAzMDAxOTlfOTI4OTY2ODE2MTBfMF8z_b_B11a778e34390a21de42d407e94f45b91.mp4
+#EXTINF:-1 tvg-name="2020年春晚" tvg-id="2020年春晚" tvg-logo="https://tb.zbds.top/logo/2020年春晚.png" group-title="春晚频道", 2020年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/30/17/BMjAyMjAxMzAxNzA5NDdfNDAzMDAxOTlfNjYxNzQ2MDAyMTFfMF8z_b_B5d51d9564c5670dc66faeba20aa7af3f.mp4
+#EXTINF:-1 tvg-name="2021年春晚" tvg-id="2021年春晚" tvg-logo="https://tb.zbds.top/logo/2021年春晚.png" group-title="春晚频道", 2021年春晚
+https://alimov2.a.kwimgs.com/upic/2022/01/30/17/BMjAyMjAxMzAxNzE4NTJfNDAzMDAxOTlfNjYxNzUzOTg3NjlfMF8z_b_Be41d9503181d7b0608a839ed401e02c2.mp4
+#EXTINF:-1 tvg-name="2022年春晚" tvg-id="2022年春晚" tvg-logo="https://tb.zbds.top/logo/2022年春晚.png" group-title="春晚频道", 2022年春晚
+https://alimov2.a.kwimgs.com/upic/2022/02/01/11/BMjAyMjAyMDExMTEwMjNfNDAzMDAxOTlfNjYzNzA4MTk4NzNfMF8z_b_B898cc7ddd0025bf54ddb18ec1f723c84.mp4
+#EXTINF:-1 tvg-name="2023年春晚" tvg-id="2023年春晚" tvg-logo="https://tb.zbds.top/logo/2023年春晚.png" group-title="春晚频道", 2023年春晚
+https://txmov2.a.kwimgs.com/bs3/video-hls/5251197255879398624_hlshd15.m3u8
 #EXTINF:-1 tvg-name="2024年春晚" tvg-id="2024年春晚" tvg-logo="https://tb.zbds.top/logo/2024年春晚.png" group-title="春晚频道", 2024年春晚
 https://p2.bdstatic.com/rtmp.liveshow.lss-user.baidubce.com/live/stream_bduid_6488563992_8982723413/merged_1707497046297_88536_25144_41936.m3u8
 #EXTINF:-1 tvg-name="2025年春晚" tvg-id="2025年春晚" tvg-logo="https://tb.zbds.top/logo/2025年春晚.png" group-title="春晚频道", 2025年春晚
-https://svipsvip.ffzyread1.com/20250129/35458_c988286f/index.m3u8
+https://res.cctvnews.cctv.com/video/3005/record/cctv/merge1/133396667284143308839013005/8fbd6180bdef4da19f6155cf6b4652e1-4.m3u8
